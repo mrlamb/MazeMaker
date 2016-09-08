@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MazeCell.cs" />
+    <Compile Include="MazeGeneratorsWilsons.cs" />
+    <Compile Include="MazeGrid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

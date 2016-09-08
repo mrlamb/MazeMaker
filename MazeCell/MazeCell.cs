@@ -1,19 +1,33 @@
-﻿namespace MRLamb.MazeMaker
+﻿using System.Collections.Generic;
+
+namespace MRLamb.MazeMaker
 {
     public class MazeCell
     {
-        public int XCoord { get; set; }
-        public int YCoord { get; set; }
         public bool InMaze { get; set; }
-        struct Walls
-        {
-            public bool North { get; set; }
-            public bool East { get; set; }
-            public bool South { get; set; }
-            public bool West { get; set; }
-        }
         public bool Start { get; set; }
         public bool End { get; set; }
+        public Direction LastExited { get; set; }
+        public Dictionary<Direction, bool> walls = new Dictionary<Direction, bool>();
 
+        public MazeCell()
+        {
+            
+            InMaze = false;
+            walls[Direction.NORTH] = true;
+            walls[Direction.EAST] = true;
+            walls[Direction.SOUTH] = true;
+            walls[Direction.WEST] = true;
+            Start = false;
+            End = false;
+
+
+        }
     }
+   
+    public enum Direction
+    {
+        NORTH, EAST, SOUTH, WEST
+    }
+
 }
